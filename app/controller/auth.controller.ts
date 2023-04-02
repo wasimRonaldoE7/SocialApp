@@ -18,4 +18,9 @@ export class AuthController {
         res.send(await this.authService.login(req.body));
     }
 
+    @ErrorHandlerDecorator()
+    async refresh(req: Request | any, res: Response | any): Promise<void> {
+        res.send( this.authService.refresh(req.body.token));
+    }
+
 }

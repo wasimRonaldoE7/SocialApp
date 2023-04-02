@@ -1,16 +1,17 @@
 export interface User {
-    name?: String,
-    email?: String,
-    phoneNumber?: String,
-    password?: String,
+    _id?: string;
+    name?: string,
+    email?: string,
+    phoneNumber?: string,
+    password?: string,
     status?: Boolean,
     isAdmin?: Boolean,
     createdAt?: Boolean,
-    createdBy?: String
+    createdBy?: string
 }
 
 export interface UpdateUser {
-    name?: String,
-    email?: String,
-    phoneNumber?: String,
+    name?: string,
+    email?: string,
+    phoneNumber?: string,
 }

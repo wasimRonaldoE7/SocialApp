@@ -1,0 +1,2903 @@
+{
+	"info": {
+		"_postman_id": "715f1d28-ff4e-4ee7-8f10-053254882a2f",
+		"name": "social-media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19480406"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"akram\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\",\n    \"password\": \"akram\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"akram\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\",\n    \"password\": \"akram\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-tWtMs/K+3mViPtCRU7FfJaPhAE0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 07:54:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "User Registered Successfully"
+						}
+					]
+				},
+				{
+					"name": "login user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+									"postman.setEnvironmentVariable(\"refreshToken\", jsonData.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"akram\",\n    \"password\": \"akram\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"akram\",\n    \"password\": \"akram\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/auth/login",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "86390"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "737"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e1-BitEBnP2Y+rAw+x7PMP6IwX+eMQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Apr 2023 06:51:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI5MWM1M2U5YTgyYjg0MjgxMmY1OTciLCJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwNDE4MzAzLCJleHAiOjE2ODA0MTg5MDN9.lNPH2isrS2WqJfFzlKj0UoHA9mFXSMdJKI3nYwLbb8Y\",\n    \"detail\": {\n        \"name\": \"akram\",\n        \"email\": \"akrammohamed000@gmail.com\",\n        \"phoneNumber\": \"6381117477\",\n        \"password\": \"$2a$10$j5UOw0Cz2fyS527ASuPBbeXwh0ZseVIkICMKF94EenPlmXZHSN24a\",\n        \"status\": true,\n        \"isAdmin\": false,\n        \"_id\": \"64291c53e9a82b842812f597\",\n        \"createdAt\": \"2023-04-02T06:10:27.562Z\",\n        \"__v\": 0\n    },\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI5MWM1M2U5YTgyYjg0MjgxMmY1OTciLCJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwNDE4MzAzLCJleHAiOjE2ODA1MDQ3MDN9.CbUuAmpQT-DxYMzDlhGWmKahdT-OJQnol0fCjH6DAe4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{",
+									"    token:\"{{token}}\"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\":\"{{refreshToken}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refresh",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"token\":\"{{refreshToken}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/auth/refresh",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "86390"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "181"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b5-wdk8d4exOX3qHHeGKcRzkNraNCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Apr 2023 07:00:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwNDE4ODQ4LCJleHAiOjE2ODA1MDUyNDh9.WFoOkxSSenGnVpHHoiOy990R2g7_-Xuzo_ikeMPf1dA\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "todo",
+			"item": [
+				{
+					"name": "create todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create todo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyN2UzMzgxOGIyMmYzYWYwOTM2ZWYzIiwibmFtZSI6ImFrcmFtIiwiaWF0IjoxNjgwMzM2Mjg2LCJleHAiOjE2ODAzMzk4ODZ9.Hsu97LZMef2FLsA3enlIX3cqwa_tuHB_ZAld97FIBMQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "326"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"146-cddaOM+/OAfrKbOQjk5X00Ldb6c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 08:47:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true,\n            \"_id\": \"6427ef9fcc97195913973963\"\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false,\n            \"_id\": \"6427ef9fcc97195913973964\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "add todolist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n    \"list\": [\n        {\n            \"item\": \"posts\",\n            \"completed\": false\n        },\n        {\n            \"item\": \"unit test case\",\n            \"completed\": false\n        }\n    ]\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add todolist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDIxNjMsImV4cCI6MTY4MDM0NTc2M30.edxfEX8pRd6tgghQ5WNXYximyM8fPekzJTuRl8U_eJw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n    \"list\": [\n        {\n            \"item\": \"posts\",\n            \"completed\": false\n        },\n        {\n            \"item\": \"unit test case\",\n            \"completed\": false\n        }\n    ]\n \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "474"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1da-ivR4X7tzq4pH+b85ZSheA2w62AM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 09:43:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"subject\": \"authenticate\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true,\n            \"_id\": \"6427ef9fcc97195913973963\"\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false,\n            \"_id\": \"6427ef9fcc97195913973964\"\n        },\n        {\n            \"item\": \"posts\",\n            \"completed\": false,\n            \"_id\": \"6427fcb1f67afbb7e434655f\"\n        },\n        {\n            \"item\": \"unit test case\",\n            \"completed\": false,\n            \"_id\": \"6427fcb1f67afbb7e4346560\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "remove todolist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n    \"list\": [\n        \"6427fcb1f67afbb7e434655f\",\n      \"6427fcb1f67afbb7e4346560\"\n    ]\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "remove todolist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDIxNjMsImV4cCI6MTY4MDM0NTc2M30.edxfEX8pRd6tgghQ5WNXYximyM8fPekzJTuRl8U_eJw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n    \"list\": [\n        \"6427fcb1f67afbb7e434655f\",\n      \"6427fcb1f67afbb7e4346560\"\n    ]\n \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-q1nntRmcp2ZJbTmNz4+DYN0LTIA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 09:56:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"subject\": \"authenticate\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true,\n            \"_id\": \"6427ef9fcc97195913973963\"\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false,\n            \"_id\": \"6427ef9fcc97195913973964\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "edit todoList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"item\": \"Comments and Post bro\",\n    \"completed\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list/{{todoId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}",
+								"list",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit todoList",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDIxNjMsImV4cCI6MTY4MDM0NTc2M30.edxfEX8pRd6tgghQ5WNXYximyM8fPekzJTuRl8U_eJw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item\": \"Comments and Post bro\",\n    \"completed\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}/list/{{todoId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}",
+										"list",
+										"{{todoId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-h1iubRilNvONTwAZsBv8KBYHsls\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 10:37:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"subject\": \"authenticate\",\n    \"list\": [\n        {\n            \"item\": \"Comments and Post bro\",\n            \"completed\": true,\n            \"_id\": \"6428086ca1607fd9151d7dbb\"\n        },\n        {\n            \"item\": \"posts\",\n            \"completed\": false,\n            \"_id\": \"64280937ceb4839e71e6999f\"\n        },\n        {\n            \"item\": \"unit test case\",\n            \"completed\": false,\n            \"_id\": \"64280937ceb4839e71e699a0\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"authenticate\"\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update todo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDAwNjgsImV4cCI6MTY4MDM0MzY2OH0.ecnNMkrfUoj_bygkGEv9yJFVVWjh8HvLH3BFlZKqnsg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"authenticate\"\n \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-q1nntRmcp2ZJbTmNz4+DYN0LTIA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 09:16:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"subject\": \"authenticate\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true,\n            \"_id\": \"6427ef9fcc97195913973963\"\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false,\n            \"_id\": \"6427ef9fcc97195913973964\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get todo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get todo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDEyMDAsImV4cCI6MTY4MDM0NDgwMH0.1EM3HKfHn1wGsIkO7wy2f8wbU6Yqggl0KxKMM9D112A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-q1nntRmcp2ZJbTmNz4+DYN0LTIA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 09:26:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427ef9fcc97195913973962\",\n    \"subject\": \"authenticate\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true,\n            \"_id\": \"6427ef9fcc97195913973963\"\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false,\n            \"_id\": \"6427ef9fcc97195913973964\"\n        }\n    ],\n    \"completed\": false,\n    \"active\": true,\n    \"createdAt\": \"2023-04-01T08:47:27.395Z\",\n    \"updatedAt\": \"2023-04-01T08:47:27.395Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get All todo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 0,\n    \"perPage\": 2,\n    \"search\":\"as\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get All todo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDc3OTYsImV4cCI6MTY4MDM0Nzg5Nn0.CrgUMcE2pbEuQzP2DHXLUyv_3vPaxPs4BlweDUW6xxE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 0,\n    \"perPage\": 2,\n    \"search\":\"as\"\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "364"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16c-u5CryHPLtUIlnx6QJ3vsrf2kc4c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 11:16:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"64280da66a548baa83e0ceaf\",\n        \"subject\": \"assesment\",\n        \"list\": [\n            {\n                \"item\": \"authentication\",\n                \"completed\": true,\n                \"_id\": \"64280da66a548baa83e0ceb0\"\n            },\n            {\n                \"item\": \"todo\",\n                \"completed\": false,\n                \"_id\": \"64280da66a548baa83e0ceb1\"\n            }\n        ],\n        \"completed\": false,\n        \"active\": true,\n        \"userId\": \"6427e33818b22f3af0936ef3\",\n        \"createdAt\": \"2023-04-01T10:55:34.245Z\",\n        \"updatedAt\": \"2023-04-01T10:55:34.245Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete Todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete Todo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpYXQiOjE2ODAzNDU1MjAsImV4cCI6MTY4MDM0OTEyMH0.8u80NLDV7A-B94HKt1-Gij2bAbVA_Z_uvDtImgCWbbM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/todo/{{todoId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"todo",
+										"{{todoId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-zyW8U1X+QuemPqAZo5PUaqYVDW8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 10:38:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Todo Deleted Successfully"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwMzQ5NzAwLCJleHAiOjE2ODAzNDk4MDB9.yWTVCDHs7X2kzDx-BJlZWahpJXVxKhfHW9LU6Ox9KcQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-aK76+KpJHbvuk1jB4vk4r01Sq+M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 11:49:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427e33818b22f3af0936ef3\",\n    \"name\": \"akram\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\",\n    \"password\": \"$2a$10$Q7FIhFEMVkIIBKvaHSFvmuMT09K6B4//9ySBjRBK0rUnAfInbO7AC\",\n    \"status\": true,\n    \"isAdmin\": false,\n    \"createdAt\": \"2023-04-01T07:54:32.399Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\":0,\n    \"perPage\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/user/",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\":0,\n    \"perPage\":5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/user/",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"109-gRUxG8AXFAra2m5NKTGkL8iSqbQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 17:14:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6428434f3319dfe9aa4c9cfd\",\n        \"name\": \"wasim\",\n        \"email\": \"wasimmohamed000@gmail.com\",\n        \"phoneNumber\": \"6381117477\",\n        \"password\": \"$2a$10$jmkAj7QswKPrwGrdvVQQ4OudWZIQ.kBhskyaH3SZTRg6APZMRUwcG\",\n        \"status\": true,\n        \"isAdmin\": false,\n        \"createdAt\": \"2023-04-01T14:44:31.682Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"wasim\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\"\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwMzQ5ODEyLCJleHAiOjE2ODAzNDk5MTJ9.2pjYP3uflG1-LPiuJRaKXQzrn3bLJzncLL6bWvQjnU4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"wasim\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\"\n \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-FWrLvLl4OVk+XZHGo6bn67+dQn4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 11:50:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427e33818b22f3af0936ef3\",\n    \"name\": \"wasim\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\",\n    \"password\": \"$2a$10$Q7FIhFEMVkIIBKvaHSFvmuMT09K6B4//9ySBjRBK0rUnAfInbO7AC\",\n    \"status\": true,\n    \"isAdmin\": false,\n    \"createdAt\": \"2023-04-01T07:54:32.399Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoiYWtyYW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwMzQ5NzAwLCJleHAiOjE2ODAzNDk4MDB9.yWTVCDHs7X2kzDx-BJlZWahpJXVxKhfHW9LU6Ox9KcQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\": \"assesment\",\n    \"list\": [\n        {\n            \"item\": \"authentication\",\n            \"completed\": true\n        },\n        {\n            \"item\": \"todo\",\n            \"completed\": false\n        }\n    ],\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-aK76+KpJHbvuk1jB4vk4r01Sq+M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 11:49:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6427e33818b22f3af0936ef3\",\n    \"name\": \"akram\",\n    \"email\": \"wasimmohamed000@gmail.com\",\n    \"phoneNumber\": \"6381117477\",\n    \"password\": \"$2a$10$Q7FIhFEMVkIIBKvaHSFvmuMT09K6B4//9ySBjRBK0rUnAfInbO7AC\",\n    \"status\": true,\n    \"isAdmin\": false,\n    \"createdAt\": \"2023-04-01T07:54:32.399Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDI3ZTMzODE4YjIyZjNhZjA5MzZlZjMiLCJuYW1lIjoid2FzaW0iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgwMzQ5ODg1LCJleHAiOjE2ODAzNDk5ODV9.VjTP4e-BWBTmojdNI35NbvFU0Y-_gQ_zBIAJkcaGmYo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/user/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-aVJl5SAf6fQziUR4n9jGt4nEFeQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 11:51:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "User Deleted"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "create post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"postId\", jsonData._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post\": \"I am going to join in Cricket club\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/post/",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"post",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"post\": \"I am going to join in Cricket club\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/post/",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"post",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-1/RuRljz6skb1KVFyhP9ht2MZNU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 14:45:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"post\": \"I am going to join in Cricket club\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"_id\": \"642843773319dfe9aa4c9d00\",\n    \"createdAt\": \"2023-04-01T14:45:11.232Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post\": \"I am going to join in FootBall club\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"post",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update post",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"post\": \"I am going to join in FootBall club\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"post",
+										"{{postId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-Bt9pmOhjum0gv9RDH9ftfhXPaSk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 14:47:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"642843f73319dfe9aa4c9d03\",\n    \"post\": \"I am going to join in FootBall club\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"createdAt\": \"2023-04-01T14:47:19.866Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"post",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"post",
+										"{{postId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-sxB8SHG+dcInt+I4kEFFw/SGNs8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 14:48:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Post Deleted Succesfully"
+						}
+					]
+				},
+				{
+					"name": "get post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"post",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/post/{{postId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"post",
+										"{{postId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-EF086GQX7bgSpheia8KVMQTHOf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 14:49:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"642844823319dfe9aa4c9d09\",\n    \"post\": \"I am going to join in Cricket club\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"createdAt\": \"2023-04-01T14:49:38.676Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get All posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 0,\n    \"perPage\": 10 ,\n    \"search\":\"Save\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/post/",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"post",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get All posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 0,\n    \"perPage\": 10 ,\n    \"search\":\"Save\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/post/",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"post",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "573"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23d-fdaW9y7PeUBdXQkP6H0jGuolys8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 16:58:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"642860e5ca2283756c0a45ff\",\n        \"post\": \" allah Save me! i aam going to join in Cricket club\",\n        \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n        \"comments\": [\n            {\n                \"_id\": \"6428613301c97f56f8c4c902\",\n                \"comment\": \"I don[t thing sAllaho lst try?\",\n                \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n                \"postId\": \"642860e5ca2283756c0a45ff\",\n                \"createdAt\": \"2023-04-01T16:52:03.013Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64286274e217065d272dfb6a\",\n                \"comment\": \"Allah is gretat?\",\n                \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n                \"postId\": \"642860e5ca2283756c0a45ff\",\n                \"createdAt\": \"2023-04-01T16:57:24.142Z\",\n                \"__v\": 0\n            }\n        ],\n        \"createdAt\": \"2023-04-01T16:50:45.589Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "create comment",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"commentId\", jsonData._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"Ya you r right?\",\n    \"postId\":\"{{postId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/comment/",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"comment",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Ya you r right?\",\n    \"postId\":\"{{postId}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/comment/",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"comment",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "181"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b5-9zjisR4lf8sAF9RTFk6ynXpF64I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 15:52:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"comment\": \"Ya you r right?\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"postId\": \"642852fcfd2d6df7832c3a20\",\n    \"_id\": \"64285350fd2d6df7832c3a23\",\n    \"createdAt\": \"2023-04-01T15:52:48.930Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"Ya you r right bro ?\"\n     \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"comment",
+								"{{commentId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update comment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Ya you r right bro ?\"\n     \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"comment",
+										"{{commentId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba-gKJw+sGv5/IH2YuYXpcz8hmw8Qo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 15:54:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"64285350fd2d6df7832c3a23\",\n    \"comment\": \"Ya you r right bro ?\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"postId\": \"642852fcfd2d6df7832c3a20\",\n    \"createdAt\": \"2023-04-01T15:52:48.930Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"comment",
+								"{{commentId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"comment",
+										"{{commentId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-sxB8SHG+dcInt+I4kEFFw/SGNs8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 15:56:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Post Deleted Succesfully"
+						}
+					]
+				},
+				{
+					"name": "get comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"comment",
+								"{{commentId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}:{{port}}/api/comment/{{commentId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"comment",
+										"{{commentId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba-gKJw+sGv5/IH2YuYXpcz8hmw8Qo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Apr 2023 15:56:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"64285350fd2d6df7832c3a23\",\n    \"comment\": \"Ya you r right bro ?\",\n    \"userId\": \"6428434f3319dfe9aa4c9cfd\",\n    \"postId\": \"642852fcfd2d6df7832c3a20\",\n    \"createdAt\": \"2023-04-01T15:52:48.930Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Welcome",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}:{{port}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "{{port}}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23-FUXwWXzMaLK0oKR0fgTHmEsIGvs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 08:23:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Hello, Welcome to Mini Social Media"
+				}
+			]
+		}
+	]
+}

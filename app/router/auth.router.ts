@@ -12,6 +12,7 @@ export default class AuthRouter {
         const authController = new AuthController();
         this.authRoutes.post('/register', authController.register.bind(authController));
         this.authRoutes.post('/login', authController.login.bind(authController));
+        this.authRoutes.post('/refresh', authController.refresh.bind(authController));
     };
 
     getRouter(): Router {
