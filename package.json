@@ -6,6 +6,7 @@
   "scripts": {
     "dev:server": "nodemon --watch './app/**/*.ts' --exec 'ts-node' app/index.ts",
     "build": "tsc",
+    "prod":"node target/index.js",
     "test": "jest"
   },
   "keywords": [],
