@@ -6,7 +6,7 @@ services:
       - '6379:6379' 
   app:
     container_name: app
-    image: Dockerfile
+    build: ./Dockerfile
     restart: always
     build: .
     ports:
